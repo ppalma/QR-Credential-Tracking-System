@@ -2,7 +2,7 @@
 #/app/tmp
 #/plugins
 #/vendors
-*/cache/*
-*/log/*
-*/sessions/*
-*/test/*
+*/cache*
+*/log*
+*/sessions*
+*/test*
