@@ -19,7 +19,24 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
+/**
+ * httpd config:
+ * 
+ * <VirtualHost *:80>
+ * # echo "127.0.0.1 qr.cake" >> /etc/hosts
+ *   ServerAdmin mail@ppalma.cl
+ *   ServerName qr.cake
+ *   DocumentRoot /var/www/QR-Credential-Tracking-System
+ *   ServerAlias qr.cake
+ *        <Directory /var/www/QR-Credential-Tracking-System>
+ *               Options Indexes FollowSymLinks MultiViews
+ *               AllowOverride All
+ *               Order allow,deny
+ *               allow from all
+ *       </Directory>
+ *   ErrorLog /var/www/QR-Credential-Tracking-System/error.httpd.log
+ * </VirtualHost>
+ */
 /**
  * CakePHP Debug Level:
  *
