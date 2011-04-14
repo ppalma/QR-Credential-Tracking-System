@@ -18,3 +18,12 @@
 [Wed Apr 13 20:03:08 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
 [Wed Apr 13 20:03:11 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
 [Wed Apr 13 20:06:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
+[Wed Apr 13 20:22:10 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 8
+[Wed Apr 13 20:23:30 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 10
+[Wed Apr 13 20:24:52 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 11
+[Wed Apr 13 20:25:13 2011] [error] [client 127.0.0.1] PHP Fatal error:  Cannot access empty property in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 10
+[Wed Apr 13 20:25:26 2011] [error] [client 127.0.0.1] PHP Fatal error:  Cannot access empty property in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 10
+[Wed Apr 13 20:25:49 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 11
+[Wed Apr 13 20:26:30 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 12
+[Wed Apr 13 20:27:23 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 12
+[Wed Apr 13 20:27:54 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method SessionComponent::del() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 13

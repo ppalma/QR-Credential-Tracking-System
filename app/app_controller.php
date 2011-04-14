@@ -124,7 +124,8 @@ class AppController extends Controller {
             if($permission == $controllerName.':'.$actionName){
                 return true;//Specific permission found
             }
-        }
+        } 
+        $this->Session->delete('Permissions');
         return false;
     }
 }
