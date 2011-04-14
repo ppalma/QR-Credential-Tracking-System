@@ -1,0 +1,20 @@
+[Wed Apr 13 19:51:33 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87, referer: http://qr.cake/users/login
+[Wed Apr 13 19:52:24 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:31 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:44 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:53 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:56 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:57 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:52:58 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:57:47 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:59:01 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 19:59:26 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function write() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 106
+[Wed Apr 13 20:00:05 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function write() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 107
+[Wed Apr 13 20:00:21 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function write() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 107
+[Wed Apr 13 20:01:07 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function write() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 107
+[Wed Apr 13 20:01:11 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function write() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 107
+[Wed Apr 13 20:02:24 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 87
+[Wed Apr 13 20:02:47 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 89
+[Wed Apr 13 20:03:08 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
+[Wed Apr 13 20:03:11 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
+[Wed Apr 13 20:06:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function check() on a non-object in /var/www/QR-Credential-Tracking-System/app/app_controller.php on line 90
