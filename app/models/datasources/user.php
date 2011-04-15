@@ -17,5 +17,19 @@ class User extends AppModel {
                         'unique' => true
             )
     );
+    /**
+         * Creates an activation hash for the current user.
+         *
+         *      @param Void
+         *      @return String activation hash.
+        */ 
+ function getActivationHash()
+        {
+                if (!isset($this->id)) {
+                        return false;
+                }
+                return substr(Security::hash(Configure::read('Security.salt').
+                $this->field('created') . date('dmY')), 0, 8);
+        }
 }
 ?>
