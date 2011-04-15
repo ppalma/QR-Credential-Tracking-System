@@ -52,7 +52,7 @@ class UsersController extends AppController {
 					$this->__sendActivationEmail($this->User->getLastInsertID());
 					// this view is not show / listed – use your imagination and inform
 					// users that an activation email has been sent out to them.
-					$this->redirect('/users/thanks');
+				//	$this->redirect('/users/thanks');
 				}
 				// Failed, clear password field
 				else {
@@ -91,8 +91,25 @@ class UsersController extends AppController {
 			$this->Email->from = 'noreply@ic.uach.cl';
 			$this->Email->template = 'user_confirm';
 			$this->Email->sendAs = 'text';   // you probably want to use both :)
-		//	debug($this->Email);
-			return $this->Email->send();
+				
+
+			/* SMTP Options */
+			$this->Email->smtpOptions = array(
+        	'port'=>'465', 
+     	   		'timeout'=>'30',
+       		 'host' => 'ssl://smtp.gmail.com',
+        	'username'=>'x.ignis.x@gmail.com',
+        	'password'=>'',
+        	
+        	);
+
+        /* Set delivery method */
+        $this->Email->delivery = 'smtp';
+
+        /* Check for SMTP errors. */
+        $this->set('smtp_errors', $this->Email->smtpError);
+        	
+        return $this->Email->send();
 			
 		}
 		/**
