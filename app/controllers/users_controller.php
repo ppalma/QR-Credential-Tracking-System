@@ -35,8 +35,8 @@ class UsersController extends AppController {
 
 		// Allow users to access the following action when not logged in
 		function beforeFilter() {
-			//$this->Auth->allow('register', 'thanks', 'confirm', 'logout');
-			$this->Auth->allow('*');
+			$this->Auth->allow();
+			//$this->Auth->allow('*');
 			$this->Auth->autoRedirect = false;
 		}
 		// Allows a user to sign up for a new account
@@ -52,7 +52,8 @@ class UsersController extends AppController {
 					$this->__sendActivationEmail($this->User->getLastInsertID());
 					// this view is not show / listed – use your imagination and inform
 					// users that an activation email has been sent out to them.
-				//	$this->redirect('/users/thanks');
+					$this->Session->setFlash(_('Your account has been created, Waiting email confirmation'));
+					$this->redirect('/');
 				}
 				// Failed, clear password field
 				else {
@@ -88,22 +89,22 @@ class UsersController extends AppController {
 
 			$this->Email->to = $user['User']['email_address'];
 			$this->Email->subject = env('SERVER_NAME') . ' – Please confirm your email address';
-			$this->Email->from = 'noreply@ic.uach.cl';
+			//$this->Email->from = 'noreply@ic.uach.cl';
 			$this->Email->template = 'user_confirm';
 			$this->Email->sendAs = 'text';   // you probably want to use both :)
 				
 
 			/* SMTP Options */
-			$this->Email->smtpOptions = array(
+			
+		  $this->Email->smtpOptions = array(
         	'port'=>'465', 
-     	   		'timeout'=>'30',
-       		 'host' => 'ssl://smtp.gmail.com',
-        	'username'=>'x.ignis.x@gmail.com',
+     	   	'timeout'=>'30',
+       		'host' => 'ssl://smtp.gmail.com',
+        	'username'=>'encuentro@ic.uach.cl',
         	'password'=>'',
-        	
         	);
 
-        /* Set delivery method */
+        // Set delivery method 
         $this->Email->delivery = 'smtp';
 
         /* Check for SMTP errors. */
@@ -119,8 +120,11 @@ class UsersController extends AppController {
 		 *  @param String $in_hash Incoming Activation Hash from the email
 		 */
 		function activate($user_id = null, $in_hash = null) {
-			$this->User->id = $id;
-			if ($this->User->exists() && ($in_hash == $this->User->getActivationHash()))
+			$this->User->id = $user_id;
+			$user = $this->User->find(
+			array('User.id' => $user_id), array('User.id','User.email_address', 'User.username','User.created'), null, false);
+			
+			if ($this->User->exists() && ($in_hash == $this->getActivationHash($user)))
 			{
 				// Update the active flag in the database
 				$this->User->saveField('active', 1);
@@ -146,11 +150,7 @@ class UsersController extends AppController {
                 0, 
                 8);
         }
-		function thanks() {
-			$this->Session->setFlash(_('un wereber'));
-
-			$this->redirect(array('action' => 'index'));
-		}
+		
 		function index() {
 			$this->User->recursive = 0;
 			$this->set('users', $this->paginate());

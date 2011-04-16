@@ -21,8 +21,8 @@ class AppController extends Controller {
         //Override default fields used by Auth component
         $this->Auth->fields = array('username'=>'email_address','password'=>'password');
         //Set application wide actions which do not require authentication
-        $this->Auth->allow(array('*'));
-    //    $this->Auth->allow(array('display'));//IMPORTANT for CakePHP 1.2 final release change this to $this->Auth->allow(array('display'));
+     //   $this->Auth->allow(array('*'));
+        $this->Auth->allow(array('display','register', 'thanks', 'confirm', 'logout'));//IMPORTANT for CakePHP 1.2 final release change this to $this->Auth->allow(array('display'));
         //Set the default redirect for users who logout
        	$this->Auth->logoutRedirect = '/';
         //Set the default redirect for users who login
