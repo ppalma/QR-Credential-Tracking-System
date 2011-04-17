@@ -2,6 +2,9 @@
 class MenuComponent extends Object {
 	var $components = array('Session');
  
+	/**
+	 * Enter description here ...
+	 */
 	function startup() {
  
 		$userMenu = array();
@@ -26,18 +29,13 @@ class MenuComponent extends Object {
 		
 		$user = $this->Session->read('Auth.User');
 
+		$allcontrollers = $this-> get();
+			//debug($generalMenu);
+			//debug($allcontrollers);
 		//menus arra
 		$menus = array();
 		$menus[__('General', true)] = $generalMenu;
-		
-		
-		
-		$menus[__('Controllers',true)]= $this->get();
-		
-		
-		
-		
-		
+		$menus[__('Controllers',true)]= $allcontrollers;
 		$menus[$this->Session->read('Auth.User.username')] = $userMenu;
  
 		$this->Session->write('Menu.main', $menus);
@@ -76,8 +74,7 @@ class MenuComponent extends Object {
             }
         }
         
-        debug($controllers);		     	
-        return $controllers;  
+             return $controllers;  
     }
 }
 ?>

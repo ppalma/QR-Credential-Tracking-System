@@ -22,6 +22,7 @@ class MenuHelper extends AppHelper {
 		foreach($menu as $caption => $config) {
 			$out = $out.'<li><h2>'.$caption.'</h2>'.
 				$this->Html->nestedList($this->parse($config)).'</li>';
+				
 		}
 		$out = '<ul>'.$out.'</ul>';
 		$out = $this->Html->div('menu', $out);
@@ -35,20 +36,30 @@ class MenuHelper extends AppHelper {
 	function parse($config) {
 		$out = array();
 		$here = Router::url(substr($this->here, strlen($this->webroot)-1));
- 
+ 		
 		foreach($config as $caption => $link) {
+		
 			if (is_array($link)) {
 				$out[$this->Html->div('parent', $caption)] = $this->parse($link);
+				
 			}
 			else {
+				
+				//debug("----".$link);
 				if (Router::url($link) != $here) {
-					$out[$caption] = $this->Html->link($caption, $link);
+					//debug(Router::url(array('controller' => $caption, 'action' => $link))  )	;
+					$out[$caption] = $this->Html->link($caption, array(
+					'controller'=> '/users',
+					'action'=>$link));
+					//$this->Html->link($caption, $link);
+					
 				}
 				else {
 					$out[$caption] = $this->Html->div('current', $caption);
 				}
 			}
 		}
+		
 		return $out;
 	}
 }
