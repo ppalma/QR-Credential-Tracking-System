@@ -5,6 +5,11 @@ class UsersController extends AppController {
 	var $name = 'Users';
 	var $components = array('Auth','Email');
 
+	
+	function index() {
+		$this->User->recursive = 0;
+		$this->set('users', $this->paginate());
+	}
 	function login(){}
 
 	function logout(){
@@ -101,7 +106,7 @@ class UsersController extends AppController {
 		// Activation failed, render ‘/views/user/activate.ctp’ which should tell the user.
 	}
 
-	function getActivationHash($user = null)
+	private function getActivationHash($user = null)
 	{
 		if (!isset($user)) {
 			return false;
@@ -115,10 +120,7 @@ class UsersController extends AppController {
 		8);
 	}
 
-	function index() {
-		$this->User->recursive = 0;
-		$this->set('users', $this->paginate());
-	}
+	
 
 	function view($id = null) {
 		if (!$id) {

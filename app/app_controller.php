@@ -9,7 +9,8 @@ class AppController extends Controller {
      * @var $components array
      * @access public
      */
-    var $components = array('Auth','Session');
+    var $components = array('Auth','Session','Menu');
+    var $helpers = array('Menu','Html','Form','Session');
     /**
      * beforeFilter
      * 
