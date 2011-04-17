@@ -2,9 +2,9 @@
 <h2>Create an Account</h2>
 <?php
 echo $form->create('User', array('action' => 'register'));
-echo $form->input('username');
+echo $this->Form->input('username');
 echo $this->Form->input('email_address', array('between' => 'We need to send you a confirmation email to check you are human.'));
-		echo $this->Form->input('password');
+echo $this->Form->input('password');
 		
 // Force the FormHelper to render a password field, and change the label.
 /**

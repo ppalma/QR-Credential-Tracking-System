@@ -8,7 +8,9 @@ class UsersController extends AppController {
 	var $components = array('Auth','Email');
 
 	function login(){ // Check for incoming login request.
-		if ($this->data) {
+		
+	
+		/*
 			// Use the AuthComponent’s login action
 			if ($this->Auth->login($this->data)) {
 				// Retrieve user data
@@ -19,14 +21,18 @@ class UsersController extends AppController {
 					// Uh Oh!
 					$this->Session->setFlash(_('Your account has not been activated yet!'));
 					$this->Auth->logout();
-					$this->redirect('/users/login');
+					//		$this->redirect('/');
 				}
 				// Cool, user is active, redirect post login
 				else {
-					$this->redirect('/');
+					$this->Session->setFlash(_('Some problem =???'));
+					//	$this->redirect('/');
 				}
 			}
-		}}
+			
+		}
+		*/
+	}
 		function logout(){
 
 			$this->Session->delete('Permissions');
@@ -34,18 +40,19 @@ class UsersController extends AppController {
 		}
 
 		// Allow users to access the following action when not logged in
+		/*
 		function beforeFilter() {
 			$this->Auth->allow();
 			//$this->Auth->allow('*');
 			$this->Auth->autoRedirect = false;
 		}
+		*/
 		// Allows a user to sign up for a new account
 		function register() {
 			if (!empty($this->data)) {
 				// See my previous post if this is forgien to you
 			
-				$this->data['User']['password'] =
-				$this->Auth->password($this->data['User']['password']);
+				//$this->data['User']['password'] = $this->Auth->password($this->data['User']['password']);
 				$this->User->data = Sanitize::clean($this->data);
 				// Successfully created account – send activation email
 				if ($this->User->save()) {
@@ -101,7 +108,7 @@ class UsersController extends AppController {
      	   	'timeout'=>'30',
        		'host' => 'ssl://smtp.gmail.com',
         	'username'=>'encuentro@ic.uach.cl',
-        	'password'=>'',
+        	'password'=>'uach2011',
         	);
 
         // Set delivery method 
@@ -131,7 +138,7 @@ class UsersController extends AppController {
 
 				// Let the user know they can now log in!
 				$this->Session->setFlash('Your account has been activated, please log in below');
-				$this->redirect('login');
+				$this->redirect('/');
 			}
 
 			// Activation failed, render ‘/views/user/activate.ctp’ which should tell the user.
@@ -167,6 +174,8 @@ class UsersController extends AppController {
 		function add() {
 			if (!empty($this->data)) {
 				$this->User->create();
+				
+				echo debug($this->data);
 				if ($this->User->save($this->data)) {
 					$this->Session->setFlash(__('The user has been saved', true));
 					$this->redirect(array('action' => 'index'));
@@ -184,6 +193,13 @@ class UsersController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			}
 			if (!empty($this->data)) {
+				
+				$this->User->recursive = -1;
+                $user_sin_editar = $this->User->read(null, $id);
+                $this->data['User']['username'] = $user_sin_editar['User']['username'];
+                if($this->data['User']['password'] == ''){
+                $this->data['User']['password'] = $user_sin_editar['User']['password'];
+                }
 				if ($this->User->save($this->data)) {
 					$this->Session->setFlash(__('The user has been saved', true));
 					$this->redirect(array('action' => 'index'));

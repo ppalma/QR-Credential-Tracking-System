@@ -32,3 +32,5 @@
 [Thu Apr 14 23:43:11 2011] [error] [client 127.0.0.1] PHP Fatal error:  Class 'Sanitize' not found in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 45, referer: http://qr.cake/users/register
 [Thu Apr 14 23:50:15 2011] [error] [client 127.0.0.1] PHP Fatal error:  Class 'Sanitize' not found in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 45, referer: http://qr.cake/users/register
 [Fri Apr 15 13:10:58 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method UsersController::getAvtivationHash() in /var/www/QR-Credential-Tracking-System/app/controllers/users_controller.php on line 81, referer: http://qr.cake/users/register
+[Sat Apr 16 20:44:46 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function read() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/elements/login_menu.ctp on line 7
+[Sat Apr 16 20:44:52 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function read() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/elements/login_menu.ctp on line 7
