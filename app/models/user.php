@@ -65,9 +65,7 @@ class User extends AppModel {
 	function identicalFieldValues( $field=array(), $compare_field=null )
 	{
 		foreach( $field as $key => $value ){
-			$v1 = $value;
-			$v2 = Security::hash($this->data[$this->name][ $compare_field ],null, true);
-			if($v1 !== $v2) {
+			if($value !== Security::hash($this->data[$this->name][ $compare_field ],null, true)) {
 				return FALSE;
 			} else {
 				continue;
