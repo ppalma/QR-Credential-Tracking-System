@@ -27,7 +27,11 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+			 'identicalFieldValues' => array( 
+        		'rule' => array('identicalFieldValues', 'confirm_password' ), 
+        		'message' => 'Please re-enter your password twice so that the values match' 
+        		)
+        ),
 		'active' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -58,6 +62,19 @@ class User extends AppModel {
 			'insertQuery' => ''
 		)
 	);
+	function identicalFieldValues( $field=array(), $compare_field=null )
+	{
+		foreach( $field as $key => $value ){
+			$v1 = $value;
+			$v2 = Security::hash($this->data[$this->name][ $compare_field ],null, true);
+			if($v1 !== $v2) {
+				return FALSE;
+			} else {
+				continue;
+			}
+		}
+		return TRUE;
 
+	}
 }
 ?>

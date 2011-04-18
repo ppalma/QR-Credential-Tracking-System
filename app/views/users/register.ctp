@@ -4,7 +4,8 @@
 echo $form->create('User', array('action' => 'register'));
 echo $this->Form->input('username');
 echo $this->Form->input('email_address', array('between' => 'We need to send you a confirmation email to check you are human.'));
-echo $this->Form->input('password');
+echo $this->Form->input('password', array('value'=> ''));
+echo $this->Form->input('confirm_password',array('type' => 'password', 'label' => 'Confirm Password', 'value' => ''));
 echo $this->Form->input('Group', array('type' => 'hidden', 'value' => $group['Group']['id']));	
 	
 // Force the FormHelper to render a password field, and change the label.

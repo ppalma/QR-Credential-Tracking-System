@@ -5,7 +5,8 @@
 	<?php
 		echo $this->Form->input('username');
 		echo $this->Form->input('email_address');
-		echo $this->Form->input('password');
+		echo $this->Form->input('password', array('value'=> ''));
+		echo $this->Form->input('confirm_password',array('type' => 'password', 'label' => 'Confirm Password', 'value' => ''));
 		echo $this->Form->input('active');
 		echo $this->Form->input('Group');
 	?>
