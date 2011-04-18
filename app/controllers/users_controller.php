@@ -23,6 +23,7 @@ class UsersController extends AppController {
 				
 			$this->User->data = Sanitize::clean($this->data);
 			// Successfully created account – send activation email
+			debug($this->data);
 			if ($this->User->save()) {
 				$this->__sendActivationEmail($this->User->getLastInsertID());
 				// this view is not show / listed – use your imagination and inform
@@ -35,6 +36,12 @@ class UsersController extends AppController {
 				$this->data['User']['password'] = null;
 			}
 		}
+		$group =  $this->User->Group->find('first', array(
+			'conditions' => array('name' => 'Guest'),
+			'recursive' => 0
+		));
+		debug($group);
+		$this->set(compact('group'));
 	}
 	/**
 	 * Send out an activation email to the user.id specified by $user_id
@@ -134,7 +141,7 @@ class UsersController extends AppController {
 		if (!empty($this->data)) {
 			$this->User->create();
 
-			echo debug($this->data);
+		
 			if ($this->User->save($this->data)) {
 				$this->Session->setFlash(__('The user has been saved', true));
 				$this->redirect(array('action' => 'index'));

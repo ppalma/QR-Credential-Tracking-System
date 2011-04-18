@@ -23,10 +23,6 @@ endif;
 <h2><?php echo sprintf(__('Release Notes for CakePHP %s.', true), Configure::version()); ?></h2>
 
 <p>
-<?php
 
-echo $html->css('menu');
-echo $menu->render($session->read('Menu.main'));
-?>
 </p>
 
