@@ -1,6 +1,7 @@
 <?php
 class User extends AppModel {
 	var $name = 'User';
+	var $displayField = 'username';
 	var $validate = array(
 		'email_address' => array(
 			'notempty' => array(
@@ -11,6 +12,11 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'email_addressIsUnique' => array(
+				'rule' => 'isUnique',
+                'required' => true,
+                'message' => 'The email addres has been ussed'
+						),
 		),
 		'password' => array(
 			'notempty' => array(
