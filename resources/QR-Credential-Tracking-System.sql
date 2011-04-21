@@ -8,6 +8,10 @@
 -- Versión de PHP: 5.2.6-1+lenny10
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+DROP DATABASE `QR-Credential-Tracking-System`;
+create database `QR-Credential-Tracking-System`;
+use  `QR-Credential-Tracking-System`;
+
 
 --
 -- Base de datos: `QR-Credential-Tracking-System`
