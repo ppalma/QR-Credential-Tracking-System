@@ -77,8 +77,8 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'cake',
-		'password' => 'c4k3',
+		'login' => 'root',
+		'password' => 'galadriel',
 		'database' => 'QR-Credential-Tracking-System',
 		'prefix' => '',
 	);
