@@ -1,6 +1,7 @@
-#/app/config
+/app/config
 /app/tmp
 #/plugins
 #/vendors
 .settings
+*~
 
