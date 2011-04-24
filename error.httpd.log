@@ -45,3 +45,4 @@
 [Sun Apr 24 15:18:19 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
 [Sun Apr 24 15:18:23 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
 [Sun Apr 24 15:18:46 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67, referer: http://qr.cake/
+[Sun Apr 24 16:22:04 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 69, referer: http://qr.cake/users/edit/4db4705a-fd98-4194-8be5-1e2ca457f137

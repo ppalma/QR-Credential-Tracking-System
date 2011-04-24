@@ -3,10 +3,12 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 		
+			<th><?php echo $this->Paginator->sort('rut');?></th>
 			<th><?php echo $this->Paginator->sort('username');?></th>
+			<th><?php echo $this->Paginator->sort('name_user');?></th>
 			<th><?php echo $this->Paginator->sort('email_address');?></th>
-		
 			<th><?php echo $this->Paginator->sort('active');?></th>
+			<th><?php echo $this->Paginator->sort('institution');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
 			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -20,11 +22,12 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		
+		<td><?php echo $user['User']['rut']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['username']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['name_user']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['email_address']; ?>&nbsp;</td>
-		
 		<td><?php echo $user['User']['active']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['institution']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['created']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['modified']; ?>&nbsp;</td>
 		<td class="actions">

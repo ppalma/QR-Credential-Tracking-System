@@ -64,19 +64,36 @@ class User extends AppModel {
 			);
 			function identicalFieldValues( $field=array(), $compare_field=null )
 			{
-				//if(!empty(strstr(Router::url(),'edit'))) // TODO: Stylish please!!!!!!
-				{
-					foreach( $field as $key => $value ){
-
-						if($value !== Security::hash($this->data[$this->name][ $compare_field ],null, true)) {
-							return FALSE;
-						} else {
-							continue;
-						}
+					
+				foreach( $field as $key => $value ){
+					//if(!empty(strstr(Router::url(),'edit'))) // TODO: Stylish please!!!!!!
+					if($value !== Security::hash($this->data[$this->name][ $compare_field ],null, true)) {
+						return FALSE;
+					} else {
+						continue;
 					}
-				
-				return TRUE;
 				}
+				return TRUE;
+
+			}
+			function beforeSave() {
+				/*
+				 * Ensure that there is a value for the password,
+				 * field it should be ignored if they are not
+				 * providing a value (i.e. no update should take place)
+				 */
+				if (isset($this->data['User']['password']) && $this->data['User']['password'] <> '')
+				{
+					$this->data['User']['password'] = Security::hash($this->data['User']['password'], null, true);
+					unset($this->data['User']['password']);
+				}
+
+				if (isset($this->data['User']['confirm_password']))
+				{
+					unset($this->data['User']['confirm_password']);
+				}
+
+				return true;
 			}
 }
 ?>
