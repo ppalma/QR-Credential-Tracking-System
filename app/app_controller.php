@@ -127,6 +127,7 @@ class AppController extends Controller {
             }
         } 
         $this->Session->delete('Permissions');
+       
         return false;
     }
 }

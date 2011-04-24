@@ -37,3 +37,11 @@
 [Sun Apr 17 12:55:25 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected $end in /var/www/QR-Credential-Tracking-System/app/views/helpers/menu.php on line 63
 [Sun Apr 17 21:19:07 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 4
 [Sun Apr 17 21:19:42 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ';' in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 4
+[Sun Apr 24 15:07:25 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected ';' in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 69
+[Sun Apr 24 15:17:10 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67, referer: http://qr.cake/users/edit/4db4705a-fd98-4194-8be5-1e2ca457f137
+[Sun Apr 24 15:17:18 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
+[Sun Apr 24 15:17:24 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67, referer: http://qr.cake/
+[Sun Apr 24 15:18:07 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
+[Sun Apr 24 15:18:19 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
+[Sun Apr 24 15:18:23 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67
+[Sun Apr 24 15:18:46 2011] [error] [client 127.0.0.1] PHP Fatal error:  Can't use function return value in write context in /var/www/QR-Credential-Tracking-System/app/models/user.php on line 67, referer: http://qr.cake/
