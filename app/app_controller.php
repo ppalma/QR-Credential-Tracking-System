@@ -115,12 +115,17 @@ class AppController extends Controller {
             $permissions = $this->Session->read('Permissions');
        }
                //Now iterate through permissions for a positive match
+               
+       //debug($permissions);
         foreach($permissions as $permission){
+        	
+        	//$this->Session->write('Menu.main',$permissions );
             if($permission == '*'){
                 return true;//Super Admin Bypass Found
             }
             if($permission == $controllerName.':*'){
                 return true;//Controller Wide Bypass Found
+                
             }
             if($permission == $controllerName.':'.$actionName){
                 return true;//Specific permission found
