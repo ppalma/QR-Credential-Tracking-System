@@ -121,6 +121,7 @@ class AppController extends Controller {
 
 			//$this->Session->write('Menu.main',$permissions );
 			if($permission == '*'){
+				$this->createAdminMenu();
 				return true;//Super Admin Bypass Found
 			}
 			if($permission == $controllerName.':*'){
@@ -130,7 +131,7 @@ class AppController extends Controller {
 			}
 			if($permission == $controllerName.':'.$actionName){
 					
-				$this->createMenu($permissions);
+				$this->createSpecificMenu($permissions);
 				return true;//Specific permission found
 			}
 		}
@@ -138,26 +139,37 @@ class AppController extends Controller {
 			
 		return false;
 	}
-	function createMenu($permissions=NULL)
+	function createSpecificMenu($permissions=NULL)
 	{
 		if($permissions)
 		{
 			$content = array();
-	
+
 			foreach($permissions as $permission)
 			{
 				$link = explode(":", $permission);
-				$content[$link[0]][$link[1]] = "/".$link[0]."/".$link[1]; 	
+				$content[$link[0]][$link[1]] = "/".$link[0]."/".$link[1];
 					
 			}
-			
-			
-		//	debug($permited);
 			$menus = $this->Session->read('Menu.main');
 			$menus['Actions']= $content;
 			$this->Session->write('Menu.main', $menus);
 		}
 	}
+	function createAdminMenu()
+	{
+		$controllers   = Configure::listObjects('controller');
+
+		$links = array();
+		foreach ($controllers as $controller)
+		$links[$controller]="/".$controller;
+
+			
+		$menus = $this->Session->read('Menu.main');
+		$menus['Actions']= $links;
+		$this->Session->write('Menu.main', $menus);
+	}
+
 }
 
 ?>
