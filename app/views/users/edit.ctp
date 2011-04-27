@@ -6,9 +6,13 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('username');
 		echo $this->Form->input('email_address');
-	//	echo $this->Form->input('password', array('value'=> ''));
-	//	echo $this->Form->input('confirm_password',array('type' => 'password', 'label' => 'Confirm Password', 'value' => ''));
-		echo $this->Form->input('active');
+		echo $this->Form->input('password', array('autocomplete'=>'off','value' => ''));
+		echo $this->Form->input('confirm_password',array('type' => 'password', 'label' => 'Confirm Password','value' => '','autocomplete'=>'off') );
+		
+		echo $this->Form->input('active',array('type'=>'select','options'=>array(  '0'=>'No', '1'=>'Yes'  )));
+		echo $this->Form->input('rut');
+		echo $this->Form->input('name_user');
+		echo $this->Form->input('institution');
 		echo $this->Form->input('Group');
 	?>
 	</fieldset>

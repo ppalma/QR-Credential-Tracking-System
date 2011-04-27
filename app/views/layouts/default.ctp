@@ -27,18 +27,32 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('cake.generic');
-		echo $html->css('menu');
+	//	echo $this->Html->css('cake.generic');
+	
+		echo $this->Html->css('contented4');
+		echo $this->Html->css('debug');
+	
+		echo $this->Html->css('menu');
 		echo $scripts_for_layout;
 	?>
 </head>
 <body>
 	<div id="container">
+	<table>
+		<tr>
+		<td colspan="2">
 		<div id="header">
-			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework', true), 'http://cakephp.org');?></h1>
-			
+			<h1><?php echo "QR-Credential-Tracking-System";?></h1>
+		</div>
+		<td>
+		</tr>
+		<tr>
+		<td>
+		<div>	
 			<?php echo $menu->render($session->read('Menu.main'));?>
 		</div>
+		</td>
+		<td>
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
@@ -46,6 +60,9 @@
 			<?php echo  $content_for_layout; ?>
 
 		</div>
+		</td>
+		<tr>
+		<td colspan="2">
 		<div id="footer">
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
@@ -54,6 +71,10 @@
 				);
 			?>
 		</div>
+</td>
+</tr>
+</tr>
+</table>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
