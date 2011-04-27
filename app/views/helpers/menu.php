@@ -36,7 +36,7 @@ class MenuHelper extends AppHelper {
 	function parse($config) {
 		$out = array();
 		$here = Router::url(substr($this->here, strlen($this->webroot)-1));
-		$controller ='';
+
 		foreach($config as $caption => $link) {
 
 			if (is_array($link)) {

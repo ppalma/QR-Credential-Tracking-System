@@ -7,9 +7,9 @@ class MenuComponent extends Object {
 	/**
 	 * Enter description here ...
 	 */
-/*
-	function getPermissionsArray()
-	{
+	/*
+	 function getPermissionsArray()
+	 {
 	 $permissions = array();
 	 //everyone gets permission to logout
 	 $permissions[]='users:logout';
@@ -21,81 +21,73 @@ class MenuComponent extends Object {
 	 $permissionsArray = array();
 	 if(!empty($thisGroups))
 	 {
-	 	$thisGroups = $thisGroups['Group'];
-	 	foreach($thisGroups as $thisGroup){
-	 		$thisPermissions = $thisUser->Group->find(array('Group.id'=>$thisGroup['id']));
-	 		$thisPermissions = $thisPermissions['Permission'];
-	 		foreach($thisPermissions as $thisPermission){
-	 			$permissions[]=$thisPermission['name'];
-	 		}
-	 	}
-
-	  foreach($permissions as $permission){
-
-	  	if($permission == '*')
-	  	{
-	  		$permissionsArray = array();
-	  		break;
-	  	}
-	  	$links = explode(":",$permission);
-	  	 //debug($links);
-	  	//$permissionsArray = array($links[0] => array($links[1] => "/".$links[0]."/".$links[1])) ;
-	  	$permissionsArray = array($links[0] = arr($links[1])) ;
-
-	  }
-
-	  debug($permissionsArray);
-	  return $permissionsArray;
+	 $thisGroups = $thisGroups['Group'];
+	 foreach($thisGroups as $thisGroup){
+	 $thisPermissions = $thisUser->Group->find(array('Group.id'=>$thisGroup['id']));
+	 $thisPermissions = $thisPermissions['Permission'];
+	 foreach($thisPermissions as $thisPermission){
+	 $permissions[]=$thisPermission['name'];
 	 }
-	}
-*/
+	 }
+
+	 foreach($permissions as $permission){
+
+	 if($permission == '*')
+	 {
+	 $permissionsArray = array();
+	 break;
+	 }
+	 $links = explode(":",$permission);
+	 //debug($links);
+	 //$permissionsArray = array($links[0] => array($links[1] => "/".$links[0]."/".$links[1])) ;
+	 $permissionsArray = array($links[0] = arr($links[1])) ;
+
+	 }
+
+	 debug($permissionsArray);
+	 return $permissionsArray;
+	 }
+	 }
+	 */
 	function startup() {
 
-		$userMenu = array();
+		
 		$generalMenu = array();
 
-
-
-
-
 		$generalMenu[__('Home', true)] = '/';
-
+		//sample child item
+			$parent = array();
+			$parent[__('Child', true)] = '/';
+		$generalMenu[__('Parent', true)] = $parent;
+		
+		
+		$userMenu = array();		
 		if(!$this->Session->check('Auth.User')) {
 			$userMenu[__('Register', true)] = '/users/register';
 			$userMenu[__('Login', true)] = '/users/login';
-
 		}
 		else {
 			$userMenu[__('Logout', true)] = '/users/logout';
 		}
 
-		//sample child item
-		$parent = array();
-		$parent[__('Child', true)] = '/';
-		$generalMenu[__('Parent', true)] = $parent;
+		
 
-		debug($generalMenu);
-		$user = $this->Session->read('Auth.User');
+		//debug($generalMenu);
+		//$user = $this->Session->read('Auth.User');
 
 
-		$admin = array();
-		$admin[__('Users',true)]='/users';
-		$admin[__('Permissions',true)]='/permissions';
-		$admin[__('Groups',true)]='/groups';
+		//	$admin = array();
+		//	$admin[__('Users',true)]='/users';
+		//	$admin[__('Permissions',true)]='/permissions';
+		//	$admin[__('Groups',true)]='/groups';
 
 		$menus = array();
-		$menus[__('General', true)] = $generalMenu;
-		//$menus[__('Administration',true)]=$admin;
 
-		//$automenu=$this->getPermissionsArray();
-		if(empty($automenu))
-			$menus[__('Auto',true)] = $admin;
-		 else 
-		 	$menus[__('Auto',true)] = $automenu;
-		 	
+		$menus[__('General', true)] = $generalMenu;
+
 		$menus[$this->Session->read('Auth.User.username')] = $userMenu;
 
-	//	debug($admin);
+		//	debug($admin);
 		$this->Session->write('Menu.main', $menus);
 
 	}

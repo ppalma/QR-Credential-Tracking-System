@@ -142,20 +142,20 @@ class AppController extends Controller {
 	{
 		if($permissions)
 		{
-			$permited = array();
 			$content = array();
-			$menus = array();
+	
 			foreach($permissions as $permission)
 			{
 				$link = explode(":", $permission);
-				$content[$link[0]][$link[1]] = $link[0]."/".$link[1]; 	
+				$content[$link[0]][$link[1]] = "/".$link[0]."/".$link[1]; 	
 					
 			}
-			$permited['Auto'] = $content;
 			
-			debug($permited);
-
-			$this->Session->write('Menu.main', $permited);
+			
+		//	debug($permited);
+			$menus = $this->Session->read('Menu.main');
+			$menus['Actions']= $content;
+			$this->Session->write('Menu.main', $menus);
 		}
 	}
 }
