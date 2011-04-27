@@ -7,7 +7,7 @@ class MenuComponent extends Object {
 	/**
 	 * Enter description here ...
 	 */
-
+/*
 	function getPermissionsArray()
 	{
 	 $permissions = array();
@@ -48,7 +48,7 @@ class MenuComponent extends Object {
 	  return $permissionsArray;
 	 }
 	}
-
+*/
 	function startup() {
 
 		$userMenu = array();
@@ -74,7 +74,7 @@ class MenuComponent extends Object {
 		$parent[__('Child', true)] = '/';
 		$generalMenu[__('Parent', true)] = $parent;
 
-
+		debug($generalMenu);
 		$user = $this->Session->read('Auth.User');
 
 
@@ -87,7 +87,7 @@ class MenuComponent extends Object {
 		$menus[__('General', true)] = $generalMenu;
 		//$menus[__('Administration',true)]=$admin;
 
-		$automenu=$this->getPermissionsArray();
+		//$automenu=$this->getPermissionsArray();
 		if(empty($automenu))
 			$menus[__('Auto',true)] = $admin;
 		 else 
@@ -95,7 +95,7 @@ class MenuComponent extends Object {
 		 	
 		$menus[$this->Session->read('Auth.User.username')] = $userMenu;
 
-		debug($admin);
+	//	debug($admin);
 		$this->Session->write('Menu.main', $menus);
 
 	}
