@@ -32,7 +32,9 @@ body {
 h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, 
 fieldset, address { margin:0.75em 0;}
 
-h1 {font-size:167%;}
+h1 {font-size:167%;
+	padding-top:25px;
+	}
 
 h2 {font-size:139%;}
 
@@ -58,7 +60,7 @@ a:hover {
         background-color: #EEEEEE;
         font-weight: normal;
         text-decoration: underline;
-	text-align:left;
+		text-align:center;
 	
 }
 
@@ -116,10 +118,11 @@ a:hover {
 #header {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	color:#CFE6CF;
+	color:#000000;
 	background-color:#72A372;
 	height:75px;
 	width:100%;
+	background: url('../img/hbck.png');
 }
 
 #sidecontent {
