@@ -151,6 +151,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 CREATE TABLE IF NOT EXISTS `rooms_users` (
   `room_id` char(36) COLLATE utf8_bin NOT NULL,
   `user_id` char(36) COLLATE utf8_bin NOT NULL,
+  `attend`  TIMESTAMP NOT NULL,
   PRIMARY KEY (`room_id`,`user_id`),
   KEY `FK_ROOMS_USERS2` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
