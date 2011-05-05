@@ -4,6 +4,8 @@
  
 .menu {
 	width:12em;
+	position:relative;
+	display:block;
 }
 .menu ul {
 	list-style-image:none;
@@ -52,6 +54,7 @@
 	text-shadow: #fff 0px 1px 0px;
 	color:#000000;
 	text-decoration:none;
+	text-align:center;
 }
 .menu a:hover, .menu  .current, .menu .parent:hover  {
 	color:#AA0000;

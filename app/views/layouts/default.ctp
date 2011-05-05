@@ -6,10 +6,9 @@
 </title>
 <?php
 echo $this->Html->meta('icon');
-//echo $this->Html->css('cake.generic');
+//	echo $this->Html->css('cake.generic');
 
-	echo $this->Html->css('estilo');
-echo $this->Html->css('debug');
+echo $this->Html->css('contented4');
 
 echo $this->Html->css('menu');
 echo $scripts_for_layout;

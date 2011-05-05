@@ -1,3 +1,14 @@
+<?php
+echo $this->Html->css('jquery.asmselect');
+echo $javascript->link('jquery');
+echo $javascript->link('jquery.ui');
+echo $javascript->link('jquery.asmselect');
+
+
+echo $javascript->link('grupos');
+
+?>
+
 <div class="users form">
 <?php echo $this->Form->create('User');?>
 	<fieldset>

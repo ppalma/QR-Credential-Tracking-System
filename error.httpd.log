@@ -55,3 +55,5 @@
 [Sun Apr 24 22:31:11 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined method MenuComponent::getPermissions() in /var/www/QR-Credential-Tracking-System/app/controllers/components/menu.php on line 41
 [Sun Apr 24 23:20:03 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /var/www/QR-Credential-Tracking-System/app/controllers/components/menu.php on line 42, referer: http://qr.cake/users/login
 [Sun Apr 24 23:22:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined function arr() in /var/www/QR-Credential-Tracking-System/app/controllers/components/menu.php on line 43, referer: http://qr.cake/users/login
+[Wed May 04 22:30:10 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function link() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/users/edit.ctp on line 2
+[Wed May 04 22:31:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function link() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/users/edit.ctp on line 2
