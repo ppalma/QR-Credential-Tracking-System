@@ -2,10 +2,21 @@
 class AttendeesController extends AppController {
 
 	var $name = 'Attendees';
+	var $helpers = array('Ajax', 'Javascript', 'Time');
 
 	function index() {
 		$this->Attendee->recursive = 0;
-		$this->set('attendees', $this->paginate());
+		$conditions =null;
+		//TODO: U know U most fix it!!!, just 4 test
+		if( $this->Session->read('Auth.User.id') != '4db4705a-fd98-4194-8be5-1e2ca457f137') 
+		{
+			$conditions = array('User.id =' => $this->Session->read('Auth.User.id'));
+		}
+			
+		$this->set('attendees', $this->paginate($conditions));
+			
+
+
 	}
 
 	function view($id = null) {
@@ -26,6 +37,9 @@ class AttendeesController extends AppController {
 				$this->Session->setFlash(__('The attendee could not be saved. Please, try again.', true));
 			}
 		}
+		$types = $this->Attendee->Type->find('list');
+		$users =  $this->Attendee->User->find('list',array('conditions' => array('User.id =' => $this->Session->read('Auth.User.id')),));
+		$this->set(compact('types','users'));
 	}
 
 	function edit($id = null) {
@@ -44,6 +58,9 @@ class AttendeesController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Attendee->read(null, $id);
 		}
+		$types = $this->Attendee->Type->find('list');
+		$users =  $this->Attendee->User->find('list',array('conditions' => array('User.id =' => $this->Session->read('Auth.User.id')),));
+		$this->set(compact('types','users'));
 	}
 
 	function delete($id = null) {

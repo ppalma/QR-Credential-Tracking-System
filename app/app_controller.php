@@ -125,13 +125,14 @@ class AppController extends Controller {
 				return true;//Super Admin Bypass Found
 			}
 			if($permission == $controllerName.':*'){
-					
+				
 				return true;//Controller Wide Bypass Found
 
 			}
 			if($permission == $controllerName.':'.$actionName){
 					
 				$this->createSpecificMenu($permissions);
+				
 				return true;//Specific permission found
 			}
 		}
@@ -144,7 +145,7 @@ class AppController extends Controller {
 		if($permissions)
 		{
 			$content = array();
-
+			
 			foreach($permissions as $permission)
 			{
 				$link = explode(":", $permission);

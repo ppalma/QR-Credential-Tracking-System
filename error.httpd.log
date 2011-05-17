@@ -57,3 +57,9 @@
 [Sun Apr 24 23:22:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to undefined function arr() in /var/www/QR-Credential-Tracking-System/app/controllers/components/menu.php on line 43, referer: http://qr.cake/users/login
 [Wed May 04 22:30:10 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function link() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/users/edit.ctp on line 2
 [Wed May 04 22:31:42 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function link() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/users/edit.ctp on line 2
+[Mon May 16 23:42:53 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /var/www/QR-Credential-Tracking-System/app/controllers/attendees_controller.php on line 5
+[Mon May 16 23:42:56 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /var/www/QR-Credential-Tracking-System/app/controllers/attendees_controller.php on line 5
+[Mon May 16 23:58:52 2011] [error] [client 127.0.0.1] PHP Fatal error:  Cannot access empty property in /var/www/QR-Credential-Tracking-System/app/models/attendee.php on line 34, referer: http://qr.cake/Attendees/add
+[Tue May 17 00:12:57 2011] [error] [client 127.0.0.1] PHP Fatal error:  Cannot redeclare Attendee::$belongsTo in /var/www/QR-Credential-Tracking-System/app/models/attendee.php on line 46, referer: http://qr.cake/attendees
+[Tue May 17 00:56:28 2011] [error] [client 127.0.0.1] PHP Parse error:  syntax error, unexpected ';' in /var/www/QR-Credential-Tracking-System/app/controllers/attendees_controller.php on line 9
+[Tue May 17 00:59:58 2011] [error] [client 127.0.0.1] PHP Fatal error:  Call to a member function sort() on a non-object in /var/www/QR-Credential-Tracking-System/app/views/attendees/index.ctp on line 5

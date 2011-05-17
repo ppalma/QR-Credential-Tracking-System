@@ -2,11 +2,10 @@
 	<h2><?php __('Attendees');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('type_id');?></th>
 			<th><?php echo $this->Paginator->sort('rut');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
-			<th><?php echo $this->Paginator->sort('user');?></th>
+			<th><?php echo $this->Paginator->sort('type_id');?></th>
+			<th><?php echo $this->Paginator->sort('user_id');?></th>
 			<th><?php echo $this->Paginator->sort('status');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -19,13 +18,15 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $attendee['Attendee']['id']; ?>&nbsp;</td>
+		
+		<td><?php echo $attendee['Attendee']['rut']; ?>&nbsp;</td>
+		<td><?php echo $attendee['Attendee']['name']; ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($attendee['Type']['name'], array('controller' => 'types', 'action' => 'view', $attendee['Type']['id'])); ?>
 		</td>
-		<td><?php echo $attendee['Attendee']['rut']; ?>&nbsp;</td>
-		<td><?php echo $attendee['Attendee']['name']; ?>&nbsp;</td>
-		<td><?php echo $attendee['Attendee']['user']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($attendee['User']['username'], array('controller' => 'users', 'action' => 'view', $attendee['User']['username'])); ?>
+		</td>
 		<td><?php echo $attendee['Attendee']['status']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $attendee['Attendee']['id'])); ?>
@@ -35,6 +36,7 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
+	
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
