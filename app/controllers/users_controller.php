@@ -44,6 +44,7 @@ class UsersController extends AppController {
 		
 		$this->set(compact('group'));
 	}
+	
 	/**
 	 * Send out an activation email to the user.id specified by $user_id
 	 *  @param Int $user_id User to send activation email to

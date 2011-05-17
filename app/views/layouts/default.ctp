@@ -6,10 +6,10 @@
 </title>
 <?php
 echo $this->Html->meta('icon');
-//	echo $this->Html->css('cake.generic');
+	echo $this->Html->css('cake.generic');
 
-echo $this->Html->css('contented4');
-
+//echo $this->Html->css('contented4');
+//echo $this->Html->css('debug');
 echo $this->Html->css('menu');
 echo $scripts_for_layout;
 ?>
@@ -30,12 +30,12 @@ echo $scripts_for_layout;
 					<h1>
 					<?php echo "QR-Credential-Tracking-System";?>
 					</h1>
-				</div> <?php echo $menu->render($session->read('Menu.main'));?>
+				</div> 
 			</td>
 		</tr>
 
 		<tr>
-			<td>Some info</td>
+			<td><?php echo $menu->render($session->read('Menu.main'));?></td>
 			<td>
 				<div id="content">
 				<?php echo $this->Session->flash(); ?>
