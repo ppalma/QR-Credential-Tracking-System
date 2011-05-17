@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 17, 2011 at 01:06 AM
+-- Generation Time: May 17, 2011 at 01:15 AM
 -- Server version: 5.1.47
 -- PHP Version: 5.3.3
 
@@ -18,6 +18,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `QR-Credential-Tracking-System`
 --
+CREATE DATABASE `QR-Credential-Tracking-System` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `QR-Credential-Tracking-System`;
 
 -- --------------------------------------------------------
 
