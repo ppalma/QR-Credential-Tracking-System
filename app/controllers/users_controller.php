@@ -21,16 +21,16 @@ class UsersController extends AppController {
 	function register() {
 		if (!empty($this->data)) {
 			// See my previous post if this is forgien to you
-				
-			$this->User->data = Sanitize::clean($this->data);
+			debug($this->data);
+			//$this->User->data = Sanitize::clean($this->data);
 			// Successfully created account – send activation email
-			
+			debug($this->data);
 			if ($this->User->save()) {
 				$this->__sendActivationEmail($this->User->getLastInsertID());
 				// this view is not show / listed – use your imagination and inform
 				// users that an activation email has been sent out to them.
 				$this->Session->setFlash(_('Your account has been created, Waiting email confirmation'));
-				$this->redirect('/');
+			//	$this->redirect('/');
 			}
 			// Failed, clear password field
 			else {
